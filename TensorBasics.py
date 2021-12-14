@@ -49,4 +49,19 @@ matrix1_cross_product_matrix2 = tf.matmul(matrix1, matrix2)  # Matrix multiplica
 matrix1_cross_product_matrix2_2 = matrix1 @ matrix2  # Matrix Multiplication using only @symbol
 
 # <------------Indexing------------------>
+xi = tf.constant([1, 2, 3, 4, 5, 6, 7, 8])
+# print(xi[:])  # print entire elements from matrix
+# print(xi[1:6])
+# print(xi[::2])  # Step size of 2 prints 0,2,4.. elements
+# print(xi[::-1])  # Print elements in reverse order
+indices = tf.constant([0, 3])
+x_ind = tf.gather(xi, indices)  # Only elements with specific indices
 
+x_2d = tf.constant([[1, 2], [3, 4], [5, 6]])
+# print(x_2d[0, :])  # Only 1st row and all elements from the same column
+# print(x_2d[0:2, :]) # Only 1st and 2nd row and all elements from columns
+
+# <------------Reshaping------------------>
+xxx = tf.range(9)
+xx_reshape = tf.reshape(xxx, (3, 3))  # reshaping of vectors
+xx_transpose = tf.transpose(xx_reshape, perm=[1, 0])  # Transpose of matrix
